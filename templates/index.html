@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload File</title>
+    <link href="/static/css/output.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white flex flex-col items-center justify-center min-h-screen p-4">
+    <form method="POST" enctype="multipart/form-data" class="bg-gray-800 p-6 rounded-xl shadow-md w-full max-w-md">
+        <h1 class="text-xl font-bold mb-4">Upload an Image or Video</h1>
+        <input type="file" name="file" class="block w-full text-white bg-gray-700 p-2 rounded mb-4" required>
+        <button type="submit" class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded text-white">Upload</button>
+    </form>
+    {% if file_url %}
+        <p class="mt-4">Uploaded: <a href="{{ file_url }}" class="underline text-blue-400">{{ file_url }}</a></p>
+    {% endif %}
+</body>
+</html>
